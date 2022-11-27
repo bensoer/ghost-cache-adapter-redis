@@ -22,12 +22,7 @@ Within your `config.production.json` or `config.development.json` file, configur
 "adapters": {
   "cache": {
     "ghost-cache-adapter-redis": {
-      "username": "<username>",
-      "password": "<password>",
-      "host": "<host>",
-      "port": 6379,
-      "dbNumber": 1,
-      "ttl": 3600
+      "host": "<host>"
     },
     "imageSizes": {
       "adapter": "ghost-cache-adapter-redis",
@@ -35,7 +30,19 @@ Within your `config.production.json` or `config.development.json` file, configur
   }
 }
 ```
+Above describes the minimum required settings. All setting options available are as follows:
+| Setting | Optional | Default | Description |
+| ------- | -------- | ------- | ----------- |
+| username | YES | `undefined` | Set username for authentication with Redis instance. Undefined will not authenticate with a username |
+| password | YES | `undefined` | Set password for authentication with Redis instance. Undefined will cause the client to not authenticate at all with the redis server  |
+| port | YES | 6379 | Set port to connect to redis instance on |
+| ttl | YES | 3600 | Default TTL value for caching |
+| dbNumber | YES | 1 | Default Redis DB to be used within the Redis instance |
+| host | NO | N/A | Redis host endpoint to connect to |
 
+**Note:** For `username` a `password` value _must_ be provided. If there is no `password` value, `username` will be ignored. If `password` is undefined, the client will connect to the redis instance without authenticating
+
+All settings can be set also by using environment variables via Ghost's configuration environment variable syntax. See https://ghost.org/docs/config/ for details
 
 # Developer Resources:
 - https://www.stevefenton.co.uk/blog/2013/01/complex-typescript-definitions-made-easy/

@@ -34,10 +34,13 @@ export default class RedisCacheAdapter extends BaseCacheAdapter {
         var authentication = ""
         if(this.config.password !== undefined){
             authentication += `${this.config.password}@`
+
+            // we only consider the username value if a password was already defined
+            if(this.config.username !== undefined){
+                authentication = `${this.config.username}.` + authentication
+            }
         }
-        if(this.config.username !== undefined){
-            authentication = `${this.config.username}.` + authentication
-        }
+        
 
         this.client = createClient({
             url: `redis://${authentication}${config.host}:${config.port}/${config.dbNumber}`

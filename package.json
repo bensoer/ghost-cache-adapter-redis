@@ -9,7 +9,8 @@
     "build": "tsc",
     "postbuild": "cp package*.json dist && cd dist && npm ci --omit=dev",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "build-example": "npm run build && cp -r dist example"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+    ghost:
+        build: .
+        restart: always
+        environment:
+            NODE_ENV: 'production'
+            "url": "http://localhost:8080"
+            "adapters__cache__imageSizes": "ghost-cache-adapter-redis"
+            "adapters__cache__imageSizes__adapter": "ghost-cache-adapter-redis"
+            "adapters__cache__ghost-cache-adapter-redis__host": 'redis'
+        ports:
+            - 127.0.0.1:8080:2368
+        depends_on:
+            - redis
+    redis:
+        image: redis:6.0.5-alpine3.12
+        restart: always
+        expose: 
+            - "6379"
+        ports:
+            - 127.0.0.1:6379:6379

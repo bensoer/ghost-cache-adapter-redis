@@ -1,0 +1,48 @@
+{
+  "name": "ghost-cache-adapter-redis",
+  "version": "1.0.0",
+  "description": "A Redis Cache Adapter for Ghost",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "postbuild": "cp package*.json dist && cd dist && npm ci --omit=dev",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bensoer/ghost-cache-adapter-redis.git"
+  },
+  "keywords": [
+    "aws",
+    "s3",
+    "typescript",
+    "ghost",
+    "cache",
+    "redis"
+  ],
+  "files": [
+    "dist/**/*"
+  ],
+  "author": "bensoer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bensoer/ghost-cache-adapter-redis/issues"
+  },
+  "homepage": "https://github.com/bensoer/ghost-cache-adapter-redis#readme",
+  "devDependencies": {
+    "@types/jest": "^28.1.3",
+    "jest": "^28.1.2",
+    "prettier": "^2.7.1",
+    "ts-jest": "^28.0.5",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@tryghost/adapter-base-cache": "^0.1.2",
+    "redis": "^4.5.1"
+  }
+}

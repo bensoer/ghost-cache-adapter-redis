@@ -21,11 +21,11 @@ Within your `config.production.json` or `config.development.json` file, configur
 ```json
 "adapters": {
   "cache": {
-    "ghost-cache-adapter-redis": {
-      "host": "<host>"
-    },
     "imageSizes": {
       "adapter": "ghost-cache-adapter-redis",
+    },
+    "ghost-cache-adapter-redis": {
+      "host": "<host>"
     }
   }
 }

@@ -26,7 +26,11 @@
   "files": [
     "dist/**/*"
   ],
-  "author": "bensoer",
+  "author": {
+    "name": "Ben Soer",
+    "email": "ben@soernet.ca",
+    "url": "https://bensoer.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bensoer/ghost-cache-adapter-redis/issues"

@@ -10,10 +10,10 @@ WARNING: Still under heavy development. Wait until release is made before using
 # Installation
 1. Clone the repository
 2. `cd` into the project root and run the following commands:
-```bash
-npm install
-npm run build
-```
+   ```bash
+   npm install
+   npm run build
+   ```
 3. Copy contents in the `dist` folder to `content/adapters/cache/ghost-cache-adapter-redis`
 
 # Configuration

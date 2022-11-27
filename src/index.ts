@@ -1,7 +1,5 @@
 import  BaseCacheAdapter from '@tryghost/adapter-base-cache'
 import { createClient, RedisClientType } from 'redis'
-import { PassThrough } from 'stream'
-import { urlToHttpOptions } from 'url'
 
 export interface RedisCacheAdapterConfig{
     username?: string, //optional

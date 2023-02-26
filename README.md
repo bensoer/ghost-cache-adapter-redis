@@ -52,3 +52,6 @@ All settings can be set also by using environment variables via Ghost's configur
 - https://github.com/colinmeinke/ghost-storage-adapter-s3
 - https://github.com/saulogt/custom-redis-cache-adapter
 - https://ghost.org/docs/config/
+
+- How cacheing module is compiled ? https://github.com/TryGhost/Ghost/blob/eb6534bd7fd905b9f402c1f446c87bff455b6f17/ghost/core/jsconfig.json
+- Someone else looking for cache details? https://forum.ghost.org/t/how-does-ghost-cache-works/11816
